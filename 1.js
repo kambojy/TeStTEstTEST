@@ -30,7 +30,7 @@ var vk_ads = document.getElementById("vk_ads_1208");if(vk_ads){$('#vk_ads_1208')
 		textload(bot[0],bot[0],'Бот катает за вас');
 		$('#AUTOBOT')[0].onmouseover= function(){$('#AUTOBOT')[0].style.color='white';};
 		$('#AUTOBOT')[0].onmouseout= function(){$('#AUTOBOT')[0].style.color='red';};
-		$('#AUTOBOT')[0].style.cursor='pointer';$('#AUTOBOT')[0].style.position='absolute';$('#AUTOBOT')[0].style.fontSize=40;$('#AUTOBOT')[0].style.color='red';$('#AUTOBOT')[0].style.left=760/2-200+'px';$('#AUTOBOT')[0].style.top='140px';$('#AUTOBOT')[0].onclick=function(){var yesAU = confirm('Запустить автобота?');if(yesAU==1){drawPage('race');PLAY_AUTO();if(SBOT==false)STOPBOT();}else{}};
+		$('#AUTOBOT')[0].style.cursor='pointer';$('#AUTOBOT')[0].style.position='absolute';$('#AUTOBOT')[0].style.fontSize=40;$('#AUTOBOT')[0].style.color='red';$('#AUTOBOT')[0].style.left=760/2-200+'px';$('#AUTOBOT')[0].style.top='140px';$('#AUTOBOT')[0].onclick=function(){var yesAU = confirm('Запустить автобота?');if(yesAU==1){drawPage('race');AUTO.play();if(SBOT==false)STOPBOT();}else{}};
 		textload(bot[1],bot[1],'Бот сливается, ну, в принципе, и всё ¯\\_(ツ)_/¯');
 		$('#SLIVBOT')[0].onmouseover= function(){$('#SLIVBOT')[0].style.color='white';};
 		$('#SLIVBOT')[0].onmouseout= function(){$('#SLIVBOT')[0].style.color='red';};
@@ -129,11 +129,55 @@ var vk_ads = document.getElementById("vk_ads_1208");if(vk_ads){$('#vk_ads_1208')
 opat();
 };
 var win1 = user.allWin,jg=11111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111,hyd,lose1 = user.allLose,intervalIDb = 1,intervalID1 = 1,intervalIDl = 1,PA=false,PS=false,SBOT=false;
+
+var AUTO = {
+    win1 : user.allWin,
+    lose1 : user.allLose,
+    intervalID1 : 1,
+    intervalID2 : 1,
+    intervalID3 : 1,
+
+    play : function(){
+console.error(this.intervalID1);
+            var boy = function() {
+                if ($('#startRandRace')[0] && $('#blockBox').css('display') == 'none' && globalPage == "race") {
+                    $('#startRandRace').click();
+                } else {
+                    viewGreenMsg('Зайди во вкладку В БОЙ');
+                }
+            };
+            var gus = function() {acsel = true;jetOn = true;};
+                        
+            user.vinilLoadAbort = true;            doNotDisturb = true;
+            this.stop(0);
+            this.intervalID1 = setInterval(boy, 600);
+            this.intervalID2 = setInterval(gus, 1);
+console.error(this.intervalID1);
+    },
+    
+    stop : function(num){
+console.error(this.intervalID1);
+            clearInterval(this.intervalID1);
+            clearInterval(this.intervalID2);
+console.error(this.intervalID1);
+
+            if(num == 1){
+            query={};
+            query.head = 'cancelRandomRace';
+            socket.send(JSON.stringify(query));
+            win2 = user.allWin - this.win1;
+            lose2 = user.allLose - this.lose1;
+            infoMsg('<center>Стоп', 'Работа Бота Остановлена. <br>Ты победил : <font color=green>' + win2 + '</font> раз.<br>Ты проиграл : <font color=red>' + lose2 + '</font> раз');
+            }
+    }
+    
+};
 var PLAY_AUTO = function(){PA=true;var boy = function (){if ($('#blockBox').css("display") != "block" && $('#startRandRace').css("display") == "block" && globalPage == "race"){$('#startRandRace').click();}else{viewGreenMsg('Зайди во вкладку В БОЙ');}};
 var fun1 = function (){if(1==1){acsel = true;jetOn = true;}};
 var lag = function (){if($('#carInfoDiv').css("display") == "block" && $('#startRandRace').css("display") != "block" && globalPage == "race" && $('.vsLeft').css("display") == "block" && $('.vsCenter').css("display") == "block" && $('.vsRight').css("display") == "block"){drawPage('race');infoMsg('<center>ОШИБКА<br>!!!','<font color = red>ТРЕБУЕТСЯ ПЕРЕЗАГРУЗКА<br>!!!<br>ОШИБКА ИГРЫ<br>!!!</font>');};}
 user.vinilLoadAbort=true;doNotDisturb=true;clearInterval(intervalIDb);clearInterval(intervalID1);clearInterval(intervalIDl);var intervalIDb = setInterval( boy , 600 );var intervalID1 = setInterval( fun1 , 1 );var intervalIDl = setInterval( lag , 5000 );}
 var STOP_AUTO = function() {PA=false;var win2 = user.allWin - win1;var lose2 = user.allLose - lose1;clearInterval(intervalIDb);clearInterval(intervalID1);clearInterval(intervalIDl);if ( $('.vsLeft').css("display") != "block" && $('.vsCenter').css("display") != "block" && $('.vsRight').css("display") != "block") {acsel = false;jetOn = false;};infoMsg('<center>Стоп','Работа Бота Остановлена. <br>Ты победил : <font color=green>'+win2+'</font> раз.<br>Ты проиграл : <font color=red>'+lose2+'</font> раз')}
+
 var rrr = 0,interval_s = 0;
 var PLAY_SLIV = function() {PS=true;var sss = function (){rrr+=1;user.vinilLoadAbort=true;query = {};query.head = 'randomRace';query.carLev = salon[myCar.id].level;socket.send(JSON.stringify(query));infoMsg('<center>'+rrr,rrr);};var interval_s = setInterval( sss , 1000 );}
 var lch = function() {
