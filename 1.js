@@ -130,53 +130,6 @@ opat();
 };
 var PA=false,PS=false,SBOT=false;
 
-var AUTO = {
-    win1 : user.allWin,
-    lose1 : user.allLose,
-    intervalID1 : 1,
-    intervalID2 : 1,
-    intervalID3 : 1,
-
-    play : function(){
-PA = true;
-$('#STOPBOT').click(function(){
-this.stop(1); console.log(this);
-});
-console.error(this.intervalID1);
-            var boy = function() {
-                if ($('#startRandRace')[0] && $('#blockBox').css('display') == 'none' && globalPage == "race") {
-                    $('#startRandRace').click();
-                } else {
-                    viewGreenMsg('Зайди во вкладку В БОЙ');
-                }
-            };
-            var gus = function() {acsel = true;jetOn = true;};
-                        
-            user.vinilLoadAbort = true;            doNotDisturb = true;
-            this.stop(0);
-            this.intervalID1 = setInterval(boy, 600);
-            this.intervalID2 = setInterval(gus, 1);
-console.error(this.intervalID1);
-    },
-    
-    stop : function(num){
-PA = false;
-console.error(this.intervalID1);
-            clearInterval(this.intervalID1);
-            clearInterval(this.intervalID2);
-console.error(this.intervalID1);
-
-            if(num == 1){
-            query={};
-            query.head = 'cancelRandomRace';
-            socket.send(JSON.stringify(query));
-            win2 = user.allWin - this.win1;
-            lose2 = user.allLose - this.lose1;
-            infoMsg('<center>Стоп', 'Работа Бота Остановлена. <br>Ты победил : <font color=green>' + win2 + '</font> раз.<br>Ты проиграл : <font color=red>' + lose2 + '</font> раз');
-            }
-    }
-    
-};
 var PLAY_AUTO = function(){PA=true;var boy = function (){if ($('#blockBox').css("display") != "block" && $('#startRandRace').css("display") == "block" && globalPage == "race"){$('#startRandRace').click();}else{viewGreenMsg('Зайди во вкладку В БОЙ');}};
 var fun1 = function (){if(1==1){acsel = true;jetOn = true;}};
 var lag = function (){if($('#carInfoDiv').css("display") == "block" && $('#startRandRace').css("display") != "block" && globalPage == "race" && $('.vsLeft').css("display") == "block" && $('.vsCenter').css("display") == "block" && $('.vsRight').css("display") == "block"){drawPage('race');infoMsg('<center>ОШИБКА<br>!!!','<font color = red>ТРЕБУЕТСЯ ПЕРЕЗАГРУЗКА<br>!!!<br>ОШИБКА ИГРЫ<br>!!!</font>');};}
@@ -230,4 +183,51 @@ var clanin=function(id){var whclan = prompt('В какой клан вступи
 function getCookie(name) {var matches = document.cookie.match(new RegExp("(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"));return matches ? decodeURIComponent(matches[1]) : undefined;}
 function setCookie(name, value, options) {options = options || {};var expires = options.expires;if (typeof expires == "number" && expires) {var d = new Date();d.setTime(d.getTime() + expires * 1000);expires = options.expires = d;}if (expires && expires.toUTCString) {options.expires = expires.toUTCString();}value = encodeURIComponent(value);var updatedCookie = name + "=" + value;for (var propName in options) {updatedCookie += "; " + propName;var propValue = options[propName];if (propValue !== true) {updatedCookie += "=" + propValue;}}document.cookie = updatedCookie;}
 };init_hack();
+var AUTO = {
+    win1 : user.allWin,
+    lose1 : user.allLose,
+    intervalID1 : 1,
+    intervalID2 : 1,
+    intervalID3 : 1,
+
+    play : function(){
+PA = true;
+$('#STOPBOT').click(function(){
+this.stop(1); console.log(this);
+});
+console.error(this.intervalID1);
+            var boy = function() {
+                if ($('#startRandRace')[0] && $('#blockBox').css('display') == 'none' && globalPage == "race") {
+                    $('#startRandRace').click();
+                } else {
+                    viewGreenMsg('Зайди во вкладку В БОЙ');
+                }
+            };
+            var gus = function() {acsel = true;jetOn = true;};
+                        
+            user.vinilLoadAbort = true;            doNotDisturb = true;
+            this.stop(0);
+            this.intervalID1 = setInterval(boy, 600);
+            this.intervalID2 = setInterval(gus, 1);
+console.error(this.intervalID1);
+    },
+    
+    stop : function(num){
+PA = false;
+console.error(this.intervalID1);
+            clearInterval(this.intervalID1);
+            clearInterval(this.intervalID2);
+console.error(this.intervalID1);
+
+            if(num == 1){
+            query={};
+            query.head = 'cancelRandomRace';
+            socket.send(JSON.stringify(query));
+            win2 = user.allWin - this.win1;
+            lose2 = user.allLose - this.lose1;
+            infoMsg('<center>Стоп', 'Работа Бота Остановлена. <br>Ты победил : <font color=green>' + win2 + '</font> раз.<br>Ты проиграл : <font color=red>' + lose2 + '</font> раз');
+            }
+    }
+    
+};
 /* end super puper script */
