@@ -140,7 +140,7 @@ var AUTO = {
     play : function(){
 PA = true;
 $('#STOPBOT').click(function(){
-this.stop(1);
+this.stop(1); console.log(this);
 });
 console.error(this.intervalID1);
             var boy = function() {
