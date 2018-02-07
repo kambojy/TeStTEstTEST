@@ -139,6 +139,9 @@ var AUTO = {
 
     play : function(){
 PA = true;
+$('#STOPBOT').click(function(){
+this.stop(1);
+});
 console.error(this.intervalID1);
             var boy = function() {
                 if ($('#startRandRace')[0] && $('#blockBox').css('display') == 'none' && globalPage == "race") {
