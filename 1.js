@@ -40,10 +40,6 @@ AUTO = {
 
     play : function(){
 PA = true;
-$('#STOPBOT').click(function(){
-this.stop(1); console.log(this);
-});
-console.error(this.intervalID1);
             var boy = function() {
                 if ($('#startRandRace')[0] && $('#blockBox').css('display') == 'none' && globalPage == "race") {
                     $('#startRandRace').click();
@@ -57,15 +53,11 @@ console.error(this.intervalID1);
             this.stop(0);
             this.intervalID1 = setInterval(boy, 600);
             this.intervalID2 = setInterval(gus, 1);
-console.error(this.intervalID1);
     },
     
     stop : function(num){
-PA = false;
-console.error(this.intervalID1);
             clearInterval(this.intervalID1);
             clearInterval(this.intervalID2);
-console.error(this.intervalID1);
 
             if(num == 1){
             query={};
