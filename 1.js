@@ -30,7 +30,59 @@ var vk_ads = document.getElementById("vk_ads_1208");if(vk_ads){$('#vk_ads_1208')
 		textload(bot[0],bot[0],'Бот катает за вас');
 		$('#AUTOBOT')[0].onmouseover= function(){$('#AUTOBOT')[0].style.color='white';};
 		$('#AUTOBOT')[0].onmouseout= function(){$('#AUTOBOT')[0].style.color='red';};
-		$('#AUTOBOT')[0].style.cursor='pointer';$('#AUTOBOT')[0].style.position='absolute';$('#AUTOBOT')[0].style.fontSize=40;$('#AUTOBOT')[0].style.color='red';$('#AUTOBOT')[0].style.left=760/2-200+'px';$('#AUTOBOT')[0].style.top='140px';$('#AUTOBOT')[0].onclick=function(){var yesAU = confirm('Запустить автобота?');if(yesAU==1){drawPage('race');AUTO.play();if(SBOT==false)STOPBOT();}else{}};
+		$('#AUTOBOT')[0].style.cursor='pointer';$('#AUTOBOT')[0].style.position='absolute';$('#AUTOBOT')[0].style.fontSize=40;$('#AUTOBOT')[0].style.color='red';$('#AUTOBOT')[0].style.left=760/2-200+'px';$('#AUTOBOT')[0].style.top='140px';$('#AUTOBOT')[0].onclick=function(){var yesAU = confirm('Запустить автобота?');if(yesAU==1){drawPage('race');
+AUTO = {
+    win1 : user.allWin,
+    lose1 : user.allLose,
+    intervalID1 : 1,
+    intervalID2 : 1,
+    intervalID3 : 1,
+
+    play : function(){
+PA = true;
+$('#STOPBOT').click(function(){
+this.stop(1); console.log(this);
+});
+console.error(this.intervalID1);
+            var boy = function() {
+                if ($('#startRandRace')[0] && $('#blockBox').css('display') == 'none' && globalPage == "race") {
+                    $('#startRandRace').click();
+                } else {
+                    viewGreenMsg('Зайди во вкладку В БОЙ');
+                }
+            };
+            var gus = function() {acsel = true;jetOn = true;};
+                        
+            user.vinilLoadAbort = true;            doNotDisturb = true;
+            this.stop(0);
+            this.intervalID1 = setInterval(boy, 600);
+            this.intervalID2 = setInterval(gus, 1);
+console.error(this.intervalID1);
+    },
+    
+    stop : function(num){
+PA = false;
+console.error(this.intervalID1);
+            clearInterval(this.intervalID1);
+            clearInterval(this.intervalID2);
+console.error(this.intervalID1);
+
+            if(num == 1){
+            query={};
+            query.head = 'cancelRandomRace';
+            socket.send(JSON.stringify(query));
+            win2 = user.allWin - this.win1;
+            lose2 = user.allLose - this.lose1;
+            infoMsg('<center>Стоп', 'Работа Бота Остановлена. <br>Ты победил : <font color=green>' + win2 + '</font> раз.<br>Ты проиграл : <font color=red>' + lose2 + '</font> раз');
+            }
+    }
+    
+};
+		
+		
+		
+		AUTO.play();
+		if(SBOT==false)STOPBOT();}else{}};
 		textload(bot[1],bot[1],'Бот сливается, ну, в принципе, и всё ¯\\_(ツ)_/¯');
 		$('#SLIVBOT')[0].onmouseover= function(){$('#SLIVBOT')[0].style.color='white';};
 		$('#SLIVBOT')[0].onmouseout= function(){$('#SLIVBOT')[0].style.color='red';};
@@ -173,53 +225,6 @@ var bgbg = new Image();bgbg.src = 'http://u913404y.beget.tech/phch/bg'+lipr*1+'.
 	if(id==68){var smprom = prompt('Вставьте ссылку на изображение','http://u913404y.beget.tech/images/sm/sm1.png');var s0 = Smoke10; var s1 = Smoke11; s1.src=smprom; s0.src=smprom;}
 	if(id==69){var massS = ["http://u913404y.beget.tech/images/sm/sm.png","http://u913404y.beget.tech/images/sm/sm1.png","http://u913404y.beget.tech/images/sm/sm2.png","http://u913404y.beget.tech/images/sm/sm3.png"];var rand = Math.floor(Math.random() * massS.length); var s0 = Smoke10; var s1 = Smoke11; s1.src=massS[rand]; s0.src=massS[rand];}
 }
-AUTO = {
-    win1 : user.allWin,
-    lose1 : user.allLose,
-    intervalID1 : 1,
-    intervalID2 : 1,
-    intervalID3 : 1,
-
-    play : function(){
-PA = true;
-$('#STOPBOT').click(function(){
-this.stop(1); console.log(this);
-});
-console.error(this.intervalID1);
-            var boy = function() {
-                if ($('#startRandRace')[0] && $('#blockBox').css('display') == 'none' && globalPage == "race") {
-                    $('#startRandRace').click();
-                } else {
-                    viewGreenMsg('Зайди во вкладку В БОЙ');
-                }
-            };
-            var gus = function() {acsel = true;jetOn = true;};
-                        
-            user.vinilLoadAbort = true;            doNotDisturb = true;
-            this.stop(0);
-            this.intervalID1 = setInterval(boy, 600);
-            this.intervalID2 = setInterval(gus, 1);
-console.error(this.intervalID1);
-    },
-    
-    stop : function(num){
-PA = false;
-console.error(this.intervalID1);
-            clearInterval(this.intervalID1);
-            clearInterval(this.intervalID2);
-console.error(this.intervalID1);
-
-            if(num == 1){
-            query={};
-            query.head = 'cancelRandomRace';
-            socket.send(JSON.stringify(query));
-            win2 = user.allWin - this.win1;
-            lose2 = user.allLose - this.lose1;
-            infoMsg('<center>Стоп', 'Работа Бота Остановлена. <br>Ты победил : <font color=green>' + win2 + '</font> раз.<br>Ты проиграл : <font color=red>' + lose2 + '</font> раз');
-            }
-    }
-    
-};
 var back = function(){imgload('http://u913404y.beget.tech/images/favicon.ico',32,32,0,'bc');$('#bc')[0].style.position='absolute';$('#bc')[0].style.left=32+'px';$('#bc')[0].style.top=160-16+'px';$('#bc')[0].onclick=function(){HTMLappend()};}
 var STOPBOT = function(){SBOT=true;var IMG = document.createElement("IMG");IMG.width=23*2;IMG.height=23*2;IMG.src = 'http://u913404y.beget.tech/phch/STOPBOT.png';IMG.id='STOPBOT';$('#canvasDiv').append(IMG);$('#STOPBOT')[0].style.position='absolute';$('#STOPBOT')[0].style.left=760/2-28+'px';$('#STOPBOT')[0].style.cursor='pointer';$('#STOPBOT')[0].style.zIndex='987654';$('#STOPBOT')[0].style.top=0+'px';$('#STOPBOT')[0].onclick=function(){if(PA==true){AUTO.stop(1);}else if(PS==true){STOP_SLIV();};};}
 function imgload(img,w,h,or,id,title){var IMG = document.createElement("IMG");IMG.width=w; IMG.height=h;IMG.src = img;if(or==1){$('#otherDiv').html(IMG);}else{$('#otherDiv').append(IMG);};if(id)IMG.id=id;if(title)IMG.title=title;};
