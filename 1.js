@@ -74,7 +74,7 @@ PA = true;
 		
 		
 		AUTO.play();
-		if(SBOT==false)STOPBOT();}else{}};
+		STOPBOT();}else{}};
 		textload(bot[1],bot[1],'Бот сливается, ну, в принципе, и всё ¯\\_(ツ)_/¯');
 		$('#SLIVBOT')[0].onmouseover= function(){$('#SLIVBOT')[0].style.color='white';};
 		$('#SLIVBOT')[0].onmouseout= function(){$('#SLIVBOT')[0].style.color='red';};
