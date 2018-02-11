@@ -45,8 +45,10 @@ PA = true;
                     $('#startRandRace').click();
                 } else {
                 }
-				if($('#otherDiv').children().length <2 &&  $('#otherDiv')[0].outerHTML == '<div id="otherDiv" style="display: block;"></div>'){
+				if($('#otherDiv').children().length <2 &&  $('#otherDiv')[0].outerHTML == '<div id="otherDiv" style="display: block;"></div>'
+				&& $('#blockMenu').css('display') == 'none' && $('#blockBox').css('display') == 'none'){
 					drawPage('race'); viewGreenMsg('Та самая ошибка');
+					console.info($('#otherDiv').children().length +' _ '+ $('#otherDiv')[0].outerHTML);
 				}
             };
             var gus = function() {acsel = true;jetOn = true;};
