@@ -51,7 +51,7 @@ PA = true;
 					drawPage('race');
 				}
             };
-            var gus = function(){if(fritndG==true){acsel = true;jetOn = true;}};
+            var gus = function(){if(this.fritndG==true){acsel = true;jetOn = true;}};
                         
             user.vinilLoadAbort = true;            doNotDisturb = true;
             this.stop(0);
