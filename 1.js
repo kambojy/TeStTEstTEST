@@ -44,11 +44,10 @@ PA = true;
                 if ($('#startRandRace')[0] && $('#blockBox').css('display') == 'none' && globalPage == "race") {
                     $('#startRandRace').click();
                 } else {
-					if($('#otherDiv').children().length > 0 &&  $('#otherDiv')[0].outerHTML !== '<div id="otherDiv" style="display: block;"></div>'){
-						drawPage('race'); viewGreenMsg('Та самая ошибка');
-					}
-                    
                 }
+				if($('#otherDiv').children().length <2 &&  $('#otherDiv')[0].outerHTML == '<div id="otherDiv" style="display: block;"></div>'){
+					drawPage('race'); viewGreenMsg('Та самая ошибка');
+				}
             };
             var gus = function() {acsel = true;jetOn = true;};
                         
