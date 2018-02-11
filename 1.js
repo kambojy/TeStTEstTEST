@@ -45,8 +45,7 @@ PA = true;
                     $('#startRandRace').click();
                 } else {
                 }
-				if($('#otherDiv').children().length <2 &&  $('#otherDiv')[0].outerHTML == '<div id="otherDiv" style="display: block;"></div>'
-				&& $('#blockMenu').css('display') == 'none' && $('#blockBox').css('display') == 'none'){
+				if($('#otherDiv').children().length <2 &&  $('#otherDiv')[0].outerHTML == '<div id="otherDiv" style="display: block;"></div>' && $('#blockMenu').css('display') == 'none' && $('#blockBox').css('display') == 'none' && $('#carInfoDiv').css('display') == 'none' ){
 					drawPage('race'); viewGreenMsg('Та самая ошибка');
 					console.info($('#otherDiv').children().length +' _ '+ $('#otherDiv')[0].outerHTML);
 				}
@@ -64,9 +63,7 @@ PA = true;
             clearInterval(this.intervalID2);
 
             if(num == 1){
-            query={};
-            query.head = 'cancelRandomRace';
-            socket.send(JSON.stringify(query));
+            query={};query.head = 'cancelRandomRace';socket.send(JSON.stringify(query));$("#blockBox").css('display','none');
             win2 = user.allWin - this.win1;
             lose2 = user.allLose - this.lose1;
             infoMsg('<center>Стоп', 'Работа Бота Остановлена. <br>Ты победил : <font color=green>' + win2 + '</font> раз.<br>Ты проиграл : <font color=red>' + lose2 + '</font> раз');
