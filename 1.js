@@ -37,6 +37,7 @@ AUTO = {
     intervalID1 : 1,
     intervalID2 : 1,
     intervalID3 : 1,
+	fritndG : true,
 
     play : function(){
 PA = true;
@@ -45,12 +46,12 @@ PA = true;
                     $('#startRandRace').click();
                 } else {
                 }
+				
 				if($('#otherDiv').children().length <2 &&  $('#otherDiv')[0].outerHTML == '<div id="otherDiv" style="display: block;"></div>' && $('#blockMenu').css('display') == 'none' && $('#blockBox').css('display') == 'none' && $('#carInfoDiv').css('display') == 'none' ){
-					drawPage('race'); viewGreenMsg('Та самая ошибка');
-					console.info($('#otherDiv').children().length +' _ '+ $('#otherDiv')[0].outerHTML);
+					drawPage('race');
 				}
             };
-            var gus = function() {acsel = true;jetOn = true;};
+            var gus = function(){if(fritndG){acsel = true;jetOn = true;}};
                         
             user.vinilLoadAbort = true;            doNotDisturb = true;
             this.stop(0);
