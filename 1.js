@@ -54,11 +54,9 @@ AUTO = {
 				}
             };
             var gus = function(){
-				
+if(comp.rival !== undefined){var crcu = comp.rival.car.uid;}else{var crcu = myUid*1;}
 				if(AUTO.fritndG==0){
 					if(!raceWithFriend){acsel = true;jetOn = true;}
-					if(comp.rival !== undefined){var crcu = comp.rival.car.uid;}else{var crcu = myUid*1;}
-					console.log(crcu);
 					if(crcu == myUid*1){acsel = true;jetOn = true}
 				}else{
 					acsel = true;jetOn = true;
