@@ -58,7 +58,7 @@ var raceWithFriend = raceWithFriend || false;
 console.info(raceWithFriend+' _____ '+crcu);
 
 				if(AUTO.fritndG==0){
-					if(!raceWithFriend){acsel = true;jetOn = true;}
+					if(raceWithFriend == false){acsel = true;jetOn = true;}
 					if(crcu == myUid*1){acsel = true;jetOn = true;}
 				}else{
 					acsel = true;jetOn = true;
