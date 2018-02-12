@@ -56,9 +56,9 @@ this.fritndG = 0;
             var gus = function(frG){
 				
 				if(frG==0){
-					if(!raceWithFriend){acsel = true;jetOn = true;console.log('1'+frG+' _ '+this.fritndG+' _ '+fritndG+' _ '+AUTO.fritndG);}
+					if(!raceWithFriend){acsel = true;jetOn = true;console.log('1'+frG+' _ '+this.fritndG+' _ '+AUTO.fritndG);}
 				}else{
-					acsel = true;jetOn = true;console.log('2'+frG+' _ '+this.fritndG+' _ '+fritndG+' _ '+AUTO.fritndG);
+					acsel = true;jetOn = true;console.log('2'+frG+' _ '+this.fritndG+' _ '+AUTO.fritndG);
 				}
 				
 			};
