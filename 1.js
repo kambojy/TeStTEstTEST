@@ -69,7 +69,7 @@ console.info(raceWithFriend+' _____ '+crcu);
             user.vinilLoadAbort = true;            doNotDisturb = true;
             this.stop(0);
             this.intervalID1 = setInterval(boy, 600);
-            this.intervalID2 = setInterval(gus(AUTO.fritndG), 1);
+            this.intervalID2 = setInterval(function(){gus(AUTO.fritndG)}, 1);
     },
     
     stop : function(num){
