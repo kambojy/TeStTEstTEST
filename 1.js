@@ -42,7 +42,6 @@ AUTO = {
 
     play : function(){
 	PA = true;
-	var raceWithFriend = raceWithFriend || false;
             var boy = function() {
                 if ($('#startRandRace')[0] && $('#blockBox').css('display') == 'none' && globalPage == "race") {
                     $('#startRandRace').click();
@@ -55,9 +54,12 @@ AUTO = {
             };
             var gus = function(){
 if(comp.rival !== undefined){var crcu = comp.rival.car.uid;}else{var crcu = myUid*1;}
+var raceWithFriend = raceWithFriend || false;
+console.info(raceWithFriend+' _____ '+crcu);
+
 				if(AUTO.fritndG==0){
 					if(!raceWithFriend){acsel = true;jetOn = true;}
-					if(crcu == myUid*1){acsel = true;jetOn = true}
+					if(crcu == myUid*1){acsel = true;jetOn = true;}
 				}else{
 					acsel = true;jetOn = true;
 				}
