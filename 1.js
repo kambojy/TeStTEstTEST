@@ -58,7 +58,7 @@ this.fritndG = 0;
 				if(frG==0){
 					if(!raceWithFriend){acsel = true;jetOn = true;console.log('1'+frG+' _ '+this.fritndG);}
 				}else{
-					acsel = true;jetOn = true;console.log('2'+frG+' _ '+this.fritndG));
+					acsel = true;jetOn = true;console.log('2'+frG+' _ '+this.fritndG);
 				}
 				
 			};
