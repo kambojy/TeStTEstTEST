@@ -37,7 +37,8 @@ AUTO = {
     intervalID1 : 1,
     intervalID2 : 1,
     intervalID3 : 1,
-	fritndG : true,
+	intervalID4 : 1,
+	fritndG : 1,
 
     play : function(){
 PA = true;
@@ -51,7 +52,7 @@ PA = true;
 					drawPage('race');
 				}
             };
-            var gus = function(){acsel = true;jetOn = true;};
+            var gus = function(){if(this.fritndG==0){if(!raceWithFriend){acsel = true;jetOn = true;}}else{acsel = true;jetOn = true;}			};
                         
             user.vinilLoadAbort = true;            doNotDisturb = true;
             this.stop(0);
