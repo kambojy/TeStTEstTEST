@@ -42,6 +42,7 @@ AUTO = {
 
     play : function(){
 PA = true;
+this.fritndG = 0;
             var boy = function() {
                 if ($('#startRandRace')[0] && $('#blockBox').css('display') == 'none' && globalPage == "race") {
                     $('#startRandRace').click();
@@ -55,9 +56,9 @@ PA = true;
             var gus = function(frG){
 				
 				if(frG==0){
-					if(!raceWithFriend){acsel = true;jetOn = true;console.log('==0');}
+					if(!raceWithFriend){acsel = true;jetOn = true;console.log('1'+frG+' _ '+this.fritndG);}
 				}else{
-					acsel = true;jetOn = true;console.log('==1');
+					acsel = true;jetOn = true;console.log('2'+frG+' _ '+this.fritndG));
 				}
 				
 			};
@@ -65,7 +66,7 @@ PA = true;
             user.vinilLoadAbort = true;            doNotDisturb = true;
             this.stop(0);
             this.intervalID1 = setInterval(boy, 600);
-            this.intervalID2 = setInterval(function(){gus(this.fritndG)}, 1);
+            this.intervalID2 = setInterval(function(){gus()}, 1);
     },
     
     stop : function(num){
