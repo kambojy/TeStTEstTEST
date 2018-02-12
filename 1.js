@@ -57,7 +57,8 @@ AUTO = {
 				
 				if(AUTO.fritndG==0){
 					if(!raceWithFriend){acsel = true;jetOn = true;}
-					if(comp.rival.car.uid == myUid*1){acsel = true;jetOn = true}
+					var crcu = comp.rival.car.uid || myUid*1; console.log(crcu);
+					if(crcu == myUid*1){acsel = true;jetOn = true}
 				}else{
 					acsel = true;jetOn = true;
 				}
