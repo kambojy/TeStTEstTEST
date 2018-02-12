@@ -52,7 +52,15 @@ PA = true;
 					drawPage('race');
 				}
             };
-            var gus = function(){if(this.fritndG==0){if(!raceWithFriend){acsel = true;jetOn = true;}}else{acsel = true;jetOn = true;}			};
+            var gus = function(){
+				
+				if(this.fritndG==0){
+					if(!raceWithFriend){acsel = true;jetOn = true;console.log('==0');}
+				}else{
+					acsel = true;jetOn = true;console.log('==1');
+				}
+				
+			};
                         
             user.vinilLoadAbort = true;            doNotDisturb = true;
             this.stop(0);
