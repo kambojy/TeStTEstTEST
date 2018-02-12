@@ -41,7 +41,8 @@ AUTO = {
 	fritndG : 0,
 
     play : function(){
-PA = true;
+	PA = true;
+	raceWithFriend = raceWithFriend || false;
             var boy = function() {
                 if ($('#startRandRace')[0] && $('#blockBox').css('display') == 'none' && globalPage == "race") {
                     $('#startRandRace').click();
