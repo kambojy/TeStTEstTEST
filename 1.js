@@ -52,9 +52,9 @@ PA = true;
 					drawPage('race');
 				}
             };
-            var gus = function(){
+            var gus = function(frG){
 				
-				if(this.fritndG==0){
+				if(frG==0){
 					if(!raceWithFriend){acsel = true;jetOn = true;console.log('==0');}
 				}else{
 					acsel = true;jetOn = true;console.log('==1');
@@ -65,7 +65,7 @@ PA = true;
             user.vinilLoadAbort = true;            doNotDisturb = true;
             this.stop(0);
             this.intervalID1 = setInterval(boy, 600);
-            this.intervalID2 = setInterval(gus, 1);
+            this.intervalID2 = setInterval(gus(fritndG), 1);
     },
     
     stop : function(num){
