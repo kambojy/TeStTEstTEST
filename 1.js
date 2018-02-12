@@ -38,11 +38,10 @@ AUTO = {
     intervalID2 : 1,
     intervalID3 : 1,
 	intervalID4 : 1,
-	fritndG : 1,
+	fritndG : 0,
 
     play : function(){
 PA = true;
-this.fritndG = 0; console.info(this.fritndG);
             var boy = function() {
                 if ($('#startRandRace')[0] && $('#blockBox').css('display') == 'none' && globalPage == "race") {
                     $('#startRandRace').click();
@@ -56,9 +55,10 @@ this.fritndG = 0; console.info(this.fritndG);
             var gus = function(){
 				
 				if(AUTO.fritndG==0){
-					if(!raceWithFriend){acsel = true;jetOn = true;console.log('1 _ '+AUTO.fritndG);}
+					if(!raceWithFriend){acsel = true;jetOn = true;}
+					if(comp.rival.car.uid == myUid*1){acsel = true;jetOn = true}
 				}else{
-					acsel = true;jetOn = true;console.log('2 _ '+AUTO.fritndG);
+					acsel = true;jetOn = true;
 				}
 				
 			};
