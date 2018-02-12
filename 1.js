@@ -66,7 +66,7 @@ this.fritndG = 0; console.info(this.fritndG);
             user.vinilLoadAbort = true;            doNotDisturb = true;
             this.stop(0);
             this.intervalID1 = setInterval(boy, 600);
-            this.intervalID2 = setInterval(function(){gus(this.fritndG)}, 1);
+            this.intervalID2 = setInterval(gus(), 1);
     },
     
     stop : function(num){
