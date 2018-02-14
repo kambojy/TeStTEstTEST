@@ -80,14 +80,14 @@ console.info(raceWithFriend+' _____ '+crcu);
 		query={};query.head = 'cancelRandomRace';socket.send(JSON.stringify(query));$("#blockBox").css('display','none');
 		win2 = user.allWin - this.win1;
 		lose2 = user.allLose - this.lose1;
-		infoMsg('<center>Стоп', 'Работа Бота Остановлена. <br>Ты победил : <font color=green>' + win2 + '</font> раз.<br>Ты проиграл : <font color=red>' + lose2 + '</font> раз');
+		infoMsg('<center>Работа бота остановлена', 'Побед : <font color=green>' + win2 + '</font><br>Проигрышей : <font color=red>' + lose2 + '</font> <font color=gray>________________________</font><br>Рейтинг : <font color=yellow>'+user.rate+'</font><br>Побед за неделю : <font color=yellow>'+user.wins+'</font>');
 		}
     },
 	
 	STAT : function(){
 		win2 = user.allWin - this.win1;
 		lose2 = user.allLose - this.lose1;
-		infoMsg('<center>Стоп', 'Работа Бота Остановлена. <br>Ты победил : <font color=green>' + win2 + '</font> раз.<br>Ты проиграл : <font color=red>' + lose2 + '</font> раз');
+		infoMsg('<center><small><font color=orange>Стата за время работы бота.</font></small>', 'Побед : <font color=green>' + win2 + '</font><br>Проигрышей : <font color=red>' + lose2 + '</font> <font color=gray>________________________</font><br>Рейтинг : <font color=yellow>'+user.rate+'</font><br>Побед за неделю : <font color=yellow>'+user.wins+'</font>');
 	}
     
 };
