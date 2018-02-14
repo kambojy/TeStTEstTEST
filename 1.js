@@ -89,7 +89,7 @@ console.info(raceWithFriend+' _____ '+crcu);
 		
 		
 		AUTO.play();
-		STOPBOT();}else{}};
+		STOPBOT();STAT();fritndG();}else{}};
 		textload(bot[1],bot[1],'Бот сливается, ну, в принципе, и всё ¯\\_(ツ)_/¯');
 		$('#SLIVBOT')[0].onmouseover= function(){$('#SLIVBOT')[0].style.color='white';};
 		$('#SLIVBOT')[0].onmouseout= function(){$('#SLIVBOT')[0].style.color='red';};
@@ -234,6 +234,9 @@ var bgbg = new Image();bgbg.src = 'http://u913404y.beget.tech/phch/bg'+lipr*1+'.
 }
 var back = function(){imgload('http://u913404y.beget.tech/images/favicon.ico',32,32,0,'bc');$('#bc')[0].style.position='absolute';$('#bc')[0].style.left=32+'px';$('#bc')[0].style.top=160-16+'px';$('#bc')[0].onclick=function(){HTMLappend()};}
 var STOPBOT = function(){SBOT=true;var IMG = document.createElement("IMG");IMG.width=23*2;IMG.height=23*2;IMG.src = 'http://u913404y.beget.tech/phch/STOPBOT.png';IMG.id='STOPBOT';$('#canvasDiv').append(IMG);$('#STOPBOT')[0].style.position='absolute';$('#STOPBOT')[0].style.left=760/2-28+'px';$('#STOPBOT')[0].style.cursor='pointer';$('#STOPBOT')[0].style.zIndex='987654';$('#STOPBOT')[0].style.top=0+'px';$('#STOPBOT')[0].onclick=function(){$(this).remove();AUTO.stop(1);};}
+var STAT = function(){var IMG = document.createElement("IMG");IMG.width=23*1.5;IMG.height=23*1.5;IMG.src = 'http://u913404y.beget.tech/phch/STAT.png';IMG.id='STAT';$('#canvasDiv').append(IMG);$('#STAT')[0].style.position='absolute';$('#STAT')[0].style.left=760/2-28+'px';$('#STAT')[0].style.cursor='pointer';$('#STAT')[0].style.zIndex='987655';$('#STAT')[0].style.top=0+'px';$('#STAT')[0].onclick=function(){AUTO.STAT();};}
+var fritndG = function(){var IMG = document.createElement("IMG");IMG.width=23*1.5;IMG.height=23*1.5;IMG.src = 'http://u913404y.beget.tech/phch/fritndG.png';IMG.id='fritndG';$('#canvasDiv').append(IMG);$('#fritndG')[0].style.position='absolute';$('#fritndG')[0].style.left=760/2+10+'px';$('#fritndG')[0].style.cursor='pointer';$('#fritndG')[0].style.zIndex='987656';$('#fritndG')[0].style.top=0+'px';$('#fritndG')[0].onclick=function(){if(AUTO.fritndG==false){AUTO.fritndG=true;}else{AUTO.fritndG=false;};};}
+
 function imgload(img,w,h,or,id,title){var IMG = document.createElement("IMG");IMG.width=w; IMG.height=h;IMG.src = img;if(or==1){$('#otherDiv').html(IMG);}else{$('#otherDiv').append(IMG);};if(id)IMG.id=id;if(title)IMG.title=title;};
 var viewInfo=function(id){window.open('http://u913404y.beget.tech/i/?'+id);};
 function textload(txt,id,title){var TEXT = document.createElement("TEXT");if(id)TEXT.id=id;TEXT.innerText=txt;$('#otherDiv').append(TEXT);if(title)TEXT.title=title;};
