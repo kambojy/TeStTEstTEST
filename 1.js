@@ -38,10 +38,11 @@ AUTO = {
     intervalID2 : 1,
     intervalID3 : 1,
 	intervalID4 : 1,
-	fritndG : confirm('Газовать со своими?\n( ОК - Да | ОТМЕНА - Нет )'),
+	fritndG : confirm('Газовать со своими? (можно будет изменять без остановки)\n( ОК - Да | ОТМЕНА - Нет )'),
 
     play : function(){
 	PA = true;
+	function generateCarForBot(ownCar){raceWithFriend=false;var botCar = JSON.parse(JSON.stringify(ownCar));var easy = true;var lucky = true;botCar.rings = getRandomInt(0, 80);	botCar.color = getRandom(0, 2);	botCar.vinil = [];	return botCar;}
 		var boy = function() {
 			if ($('#startRandRace')[0] && $('#blockBox').css('display') == 'none' && globalPage == "race") {
 				$('#startRandRace').click();
@@ -55,7 +56,7 @@ AUTO = {
 		var gus = function(){
 if(comp.rival !== undefined){var crcu = comp.rival.car.uid;}else{var crcu = myUid*1;}
 raceWithFriend ? raceWithFriend : false;
-console.info(raceWithFriend+' _____ '+crcu);
+//console.info(raceWithFriend+' _____ '+crcu);
 
 			if(AUTO.fritndG==false){
 				if(!raceWithFriend){acsel = true;jetOn = true;}
@@ -66,9 +67,9 @@ console.info(raceWithFriend+' _____ '+crcu);
 			
 		};
 					
-		user.vinilLoadAbort = true;            doNotDisturb = true;
+		user.vinilLoadAbort = true;doNotDisturb = true;
 		this.stop(0);
-		this.intervalID1 = setInterval(boy, 600);
+		this.intervalID1 = setInterval(boy, 700);
 		this.intervalID2 = setInterval(function(){gus(AUTO.fritndG)}, 1);
     },
     
