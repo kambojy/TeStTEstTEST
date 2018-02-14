@@ -38,7 +38,7 @@ AUTO = {
     intervalID2 : 1,
     intervalID3 : 1,
 	intervalID4 : 1,
-	fritndG : 0,
+	fritndG : confirm('Газовать со своими?\n( ОК - Да | ОТМЕНА - Нет )'),
 
     play : function(){
 	PA = true;
@@ -57,8 +57,8 @@ if(comp.rival !== undefined){var crcu = comp.rival.car.uid;}else{var crcu = myUi
 var raceWithFriend = raceWithFriend || false;
 console.info(raceWithFriend+' _____ '+crcu);
 
-				if(AUTO.fritndG==0){
-					if(raceWithFriend == false){acsel = true;jetOn = true;}
+				if(AUTO.fritndG==false){
+					if(!raceWithFriend){acsel = true;jetOn = true;}
 					if(crcu == myUid*1){acsel = true;jetOn = true;}
 				}else{
 					acsel = true;jetOn = true;
