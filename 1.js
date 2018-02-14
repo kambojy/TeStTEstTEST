@@ -42,47 +42,53 @@ AUTO = {
 
     play : function(){
 	PA = true;
-            var boy = function() {
-                if ($('#startRandRace')[0] && $('#blockBox').css('display') == 'none' && globalPage == "race") {
-                    $('#startRandRace').click();
-                } else {
-                }
-				
-				if($('#otherDiv').children().length <2 &&  $('#otherDiv')[0].outerHTML == '<div id="otherDiv" style="display: block;"></div>' && $('#blockMenu').css('display') == 'none' && $('#blockBox').css('display') == 'none' && $('#carInfoDiv').css('display') == 'none' ){
-					drawPage('race');
-				}
-            };
-            var gus = function(){
+		var boy = function() {
+			if ($('#startRandRace')[0] && $('#blockBox').css('display') == 'none' && globalPage == "race") {
+				$('#startRandRace').click();
+			} else {
+			}
+			
+			if($('#otherDiv').children().length <2 &&  $('#otherDiv')[0].outerHTML == '<div id="otherDiv" style="display: block;"></div>' && $('#blockMenu').css('display') == 'none' && $('#blockBox').css('display') == 'none' && $('#carInfoDiv').css('display') == 'none' ){
+				drawPage('race');
+			}
+		};
+		var gus = function(){
 if(comp.rival !== undefined){var crcu = comp.rival.car.uid;}else{var crcu = myUid*1;}
 raceWithFriend ? raceWithFriend : false;
 console.info(raceWithFriend+' _____ '+crcu);
 
-				if(AUTO.fritndG==false){
-					if(!raceWithFriend){acsel = true;jetOn = true;}
-					if(crcu == myUid*1){acsel = true;jetOn = true;}
-				}else{
-					acsel = true;jetOn = true;
-				}
-				
-			};
-                        
-            user.vinilLoadAbort = true;            doNotDisturb = true;
-            this.stop(0);
-            this.intervalID1 = setInterval(boy, 600);
-            this.intervalID2 = setInterval(function(){gus(AUTO.fritndG)}, 1);
+			if(AUTO.fritndG==false){
+				if(!raceWithFriend){acsel = true;jetOn = true;}
+				if(crcu == myUid*1){acsel = true;jetOn = true;}
+			}else{
+				acsel = true;jetOn = true;
+			}
+			
+		};
+					
+		user.vinilLoadAbort = true;            doNotDisturb = true;
+		this.stop(0);
+		this.intervalID1 = setInterval(boy, 600);
+		this.intervalID2 = setInterval(function(){gus(AUTO.fritndG)}, 1);
     },
     
     stop : function(num){
-            clearInterval(this.intervalID1);
-            clearInterval(this.intervalID2);
+		clearInterval(this.intervalID1);
+		clearInterval(this.intervalID2);
 
-            if(num == 1){
-            query={};query.head = 'cancelRandomRace';socket.send(JSON.stringify(query));$("#blockBox").css('display','none');
-            win2 = user.allWin - this.win1;
-            lose2 = user.allLose - this.lose1;
-            infoMsg('<center>Стоп', 'Работа Бота Остановлена. <br>Ты победил : <font color=green>' + win2 + '</font> раз.<br>Ты проиграл : <font color=red>' + lose2 + '</font> раз');
-            }
-    }
+		if(num == 1){
+		query={};query.head = 'cancelRandomRace';socket.send(JSON.stringify(query));$("#blockBox").css('display','none');
+		win2 = user.allWin - this.win1;
+		lose2 = user.allLose - this.lose1;
+		infoMsg('<center>Стоп', 'Работа Бота Остановлена. <br>Ты победил : <font color=green>' + win2 + '</font> раз.<br>Ты проиграл : <font color=red>' + lose2 + '</font> раз');
+		}
+    },
+	
+	STAT : function(){
+		win2 = user.allWin - this.win1;
+		lose2 = user.allLose - this.lose1;
+		infoMsg('<center>Стоп', 'Работа Бота Остановлена. <br>Ты победил : <font color=green>' + win2 + '</font> раз.<br>Ты проиграл : <font color=red>' + lose2 + '</font> раз');
+	}
     
 };
 		
