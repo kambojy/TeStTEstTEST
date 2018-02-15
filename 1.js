@@ -31,7 +31,6 @@ var vk_ads = document.getElementById("vk_ads_1208");if(vk_ads){$('#vk_ads_1208')
 		$('#AUTOBOT')[0].onmouseover= function(){$('#AUTOBOT')[0].style.color='white';};
 		$('#AUTOBOT')[0].onmouseout= function(){$('#AUTOBOT')[0].style.color='red';};
 		$('#AUTOBOT')[0].style.cursor='pointer';$('#AUTOBOT')[0].style.position='absolute';$('#AUTOBOT')[0].style.fontSize=40;$('#AUTOBOT')[0].style.color='red';$('#AUTOBOT')[0].style.left=760/2-200+'px';$('#AUTOBOT')[0].style.top='140px';$('#AUTOBOT')[0].onclick=function(){
-			var generateCarForBot = function(ownCar){raceWithFriend=false;var botCar = JSON.parse(JSON.stringify(ownCar));var easy = true;botCar.tires=-getRandomInt(110, 111112);botCar.engine=-getRandomInt(110, 111112);botCar.turbo=-getRandomInt(110, 111112);botCar.transm=-getRandomInt(110, 111112);botCar.exhaust=-getRandomInt(110, 111112);botCar.susp=-getRandomInt(110, 111112);var lucky = true;botCar.rings = getRandomInt(0, 80);botCar.color = getRandom(0, 2);botCar.vinil = [];return botCar;}
 			var yesAU = confirm('Запустить автобота?');if(yesAU==1){drawPage('race');
 AUTO = {
     win1 : user.allWin,
@@ -43,7 +42,6 @@ AUTO = {
 	fritndG : confirm('Газовать со своими? (можно будет изменять без остановки)\n( ОК - Да | ОТМЕНА - Нет )'),
 
     play : function(){
-	if(typeof raceWithFriend=='undefined')var raceWithFriend=false;
 	PA = true;
 		var boy = function() {
 			if ($('#startRandRace')[0] && $('#blockBox').css('display') == 'none' && globalPage == "race") {
@@ -61,6 +59,7 @@ raceWithFriend ? raceWithFriend : false;
 //console.info(raceWithFriend+' _____ '+crcu);
 
 			if(AUTO.fritndG==false){
+			if(typeof raceWithFriend=='undefined')var raceWithFriend=false;
 				if(!raceWithFriend){acsel = true;jetOn = true;}
 				if(crcu == myUid*1){acsel = true;jetOn = true;}
 			}else{
@@ -205,6 +204,8 @@ var fun1 = function (){if(1==1){acsel = true;jetOn = true;}};
 var lag = function (){if($('#carInfoDiv').css("display") == "block" && $('#startRandRace').css("display") != "block" && globalPage == "race" && $('.vsLeft').css("display") == "block" && $('.vsCenter').css("display") == "block" && $('.vsRight').css("display") == "block"){drawPage('race');infoMsg('<center>ОШИБКА<br>!!!','<font color = red>ТРЕБУЕТСЯ ПЕРЕЗАГРУЗКА<br>!!!<br>ОШИБКА ИГРЫ<br>!!!</font>');};}
 user.vinilLoadAbort=true;doNotDisturb=true;clearInterval(intervalIDb);clearInterval(intervalID1);clearInterval(intervalIDl);var intervalIDb = setInterval( boy , 600 );var intervalID1 = setInterval( fun1 , 1 );var intervalIDl = setInterval( lag , 5000 );}
 var STOP_AUTO = function() {PA=false;var win2 = user.allWin - win1;var lose2 = user.allLose - lose1;clearInterval(intervalIDb);clearInterval(intervalID1);clearInterval(intervalIDl);if ( $('.vsLeft').css("display") != "block" && $('.vsCenter').css("display") != "block" && $('.vsRight').css("display") != "block") {acsel = false;jetOn = false;};infoMsg('<center>Стоп','Работа Бота Остановлена. <br>Ты победил : <font color=green>'+win2+'</font> раз.<br>Ты проиграл : <font color=red>'+lose2+'</font> раз')}
+var generateCarForBot = function(ownCar){raceWithFriend=false;var botCar = JSON.parse(JSON.stringify(ownCar));var easy = true;botCar.tires=-getRandomInt(110, 111112);botCar.engine=-getRandomInt(110, 111112);botCar.turbo=-getRandomInt(110, 111112);botCar.transm=-getRandomInt(110, 111112);botCar.exhaust=-getRandomInt(110, 111112);botCar.susp=-getRandomInt(110, 111112);var lucky = true;botCar.rings = getRandomInt(0, 80);botCar.color = getRandom(0, 2);botCar.vinil = [];return botCar;}
+
 
 var rrr = 0,interval_s = 0;
 var PLAY_SLIV = function() {PS=true;var sss = function (){rrr+=1;user.vinilLoadAbort=true;query = {};query.head = 'randomRace';query.carLev = salon[myCar.id].level;socket.send(JSON.stringify(query));infoMsg('<center>'+rrr,rrr);};var interval_s = setInterval( sss , 1000 );}
