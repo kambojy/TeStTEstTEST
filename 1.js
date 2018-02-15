@@ -42,7 +42,6 @@ AUTO = {
 
     play : function(){
 	PA = true;
-	function generateCarForBot(ownCar){raceWithFriend=false;var botCar = JSON.parse(JSON.stringify(ownCar));var easy = true;var lucky = true;botCar.rings = getRandomInt(0, 80);	botCar.color = getRandom(0, 2);	botCar.vinil = [];	return botCar;}
 		var boy = function() {
 			if ($('#startRandRace')[0] && $('#blockBox').css('display') == 'none' && globalPage == "race") {
 				$('#startRandRace').click();
@@ -56,6 +55,7 @@ AUTO = {
 		var gus = function(){
 if(comp.rival !== undefined){var crcu = comp.rival.car.uid;}else{var crcu = myUid*1;}
 raceWithFriend ? raceWithFriend : false;
+if(typeof raceWithFriend=='undefined')raceWithFriend=false;
 //console.info(raceWithFriend+' _____ '+crcu);
 
 			if(AUTO.fritndG==false){
@@ -96,7 +96,10 @@ raceWithFriend ? raceWithFriend : false;
 		
 		
 		AUTO.play();
-		STOPBOT();STAT();fritndG();}else{}};
+		STOPBOT();STAT();fritndG();
+		$('#fritndG, #STOPBOT, #STAT').animate({opacity:0},5000);	$('#fritndG, #STOPBOT, #STAT').hover(function(){$(this).css('opacity',1);},function(){$(this).css('opacity',0);})
+		function generateCarForBot(ownCar){raceWithFriend=false;var botCar = JSON.parse(JSON.stringify(ownCar));var easy = true;botCar.tires=0;botCar.engine=6;botCar.turbo=6;botCar.transm=6;botCar.exhaust=6;botCar.susp=6;var lucky = true;botCar.rings = getRandomInt(0, 80);botCar.color = getRandom(0, 2);botCar.vinil = [];return botCar;}
+		}else{}};
 		textload(bot[1],bot[1],'Бот сливается, ну, в принципе, и всё ¯\\_(ツ)_/¯');
 		$('#SLIVBOT')[0].onmouseover= function(){$('#SLIVBOT')[0].style.color='white';};
 		$('#SLIVBOT')[0].onmouseout= function(){$('#SLIVBOT')[0].style.color='red';};
