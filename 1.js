@@ -59,7 +59,7 @@ raceWithFriend ? raceWithFriend : false;
 //console.info(raceWithFriend+' _____ '+crcu);
 
 			if(AUTO.fritndG==false){
-			if(typeof raceWithFriend=='undefined')var raceWithFriend=false;
+			if(typeof raceWithFriend=='undefined'){acsel = true;jetOn = true;};
 				if(!raceWithFriend){acsel = true;jetOn = true;}
 				if(crcu == myUid*1){acsel = true;jetOn = true;}
 			}else{
