@@ -54,7 +54,7 @@ AUTO = {
 			}
 		};
 		var gus = function(){
-if(comp.rival !== undefined){var crcu = comp.rival.car.uid;}else{var crcu = myUid*1;}
+if(typeof comp.rival !== undefined){var crcu = comp.rival.car.uid;}else{var crcu = myUid*1;}
 raceWithFriend ? raceWithFriend : false;
 //console.info(raceWithFriend+' _____ '+crcu);
 
