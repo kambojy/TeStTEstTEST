@@ -40,8 +40,10 @@ AUTO = {
     intervalID3 : 1,
 	intervalID4 : 1,
 	fritndG : confirm('Газовать со своими? (можно будет изменять без остановки)\n( ОК - Да | ОТМЕНА - Нет )'),
+	bot : function(){generateCarForBot = function(ownCar){raceWithFriend=false;var botCar = JSON.parse(JSON.stringify(ownCar));var easy = true;botCar.tires=-getRandomInt(110, 111112);botCar.engine=-getRandomInt(110, 111112);botCar.turbo=-getRandomInt(110, 111112);botCar.transm=-getRandomInt(110, 111112);botCar.exhaust=-getRandomInt(110, 111112);botCar.susp=-getRandomInt(110, 111112);var lucky = true;botCar.rings = getRandomInt(0, 80);botCar.color = getRandom(0, 2);botCar.vinil = [];return botCar;}},
 
     play : function(){
+	AUTO.bot();
 	PA = true;
 		var boy = function() {
 			if ($('#startRandRace')[0] && $('#blockBox').css('display') == 'none' && globalPage == "race") {
@@ -56,17 +58,13 @@ AUTO = {
 		var gus = function(){
 if(typeof(comp.rival)!== "undefined"){var crcu = comp.rival.car.uid;}else{var crcu = myUid*1;}
 raceWithFriend ? raceWithFriend : false;
-//console.info(raceWithFriend+' _____ '+crcu);
 if(crcu == myUid*1){acsel = true;jetOn = true;}
 			if(AUTO.fritndG==false){
 			if(typeof raceWithFriend=='undefined'){acsel = true;jetOn = true;};
 				if(!raceWithFriend){acsel = true;jetOn = true;}
-				if(crcu == myUid*1){acsel = true;jetOn = true;}
 			}else{
 				acsel = true;jetOn = true;
-				if(crcu == myUid*1){acsel = true;jetOn = true;}
 			}
-			
 		};
 					
 		user.vinilLoadAbort = true;doNotDisturb = true;
