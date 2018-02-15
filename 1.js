@@ -202,17 +202,6 @@ if(crcu == myUid*1){acsel = true;jetOn = true;}
 opat();
 };
 var PA=false,PS=false,SBOT=false;
-
-var PLAY_AUTO = function(){PA=true;var boy = function (){if ($('#blockBox').css("display") != "block" && $('#startRandRace').css("display") == "block" && globalPage == "race"){$('#startRandRace').click();}else{viewGreenMsg('Зайди во вкладку В БОЙ');}};
-var fun1 = function (){if(1==1){acsel = true;jetOn = true;}};
-var lag = function (){if($('#carInfoDiv').css("display") == "block" && $('#startRandRace').css("display") != "block" && globalPage == "race" && $('.vsLeft').css("display") == "block" && $('.vsCenter').css("display") == "block" && $('.vsRight').css("display") == "block"){drawPage('race');infoMsg('<center>ОШИБКА<br>!!!','<font color = red>ТРЕБУЕТСЯ ПЕРЕЗАГРУЗКА<br>!!!<br>ОШИБКА ИГРЫ<br>!!!</font>');};}
-user.vinilLoadAbort=true;doNotDisturb=true;clearInterval(intervalIDb);clearInterval(intervalID1);clearInterval(intervalIDl);var intervalIDb = setInterval( boy , 600 );var intervalID1 = setInterval( fun1 , 1 );var intervalIDl = setInterval( lag , 5000 );}
-var STOP_AUTO = function() {PA=false;var win2 = user.allWin - win1;var lose2 = user.allLose - lose1;clearInterval(intervalIDb);clearInterval(intervalID1);clearInterval(intervalIDl);if ( $('.vsLeft').css("display") != "block" && $('.vsCenter').css("display") != "block" && $('.vsRight').css("display") != "block") {acsel = false;jetOn = false;};infoMsg('<center>Стоп','Работа Бота Остановлена. <br>Ты победил : <font color=green>'+win2+'</font> раз.<br>Ты проиграл : <font color=red>'+lose2+'</font> раз')}
-//generateCarForBot = function(ownCar){raceWithFriend=false;var botCar = JSON.parse(JSON.stringify(ownCar));var easy = true;botCar.tires=-getRandomInt(110, 111112);botCar.engine=-getRandomInt(110, 111112);botCar.turbo=-getRandomInt(110, 111112);botCar.transm=-getRandomInt(110, 111112);botCar.exhaust=-getRandomInt(110, 111112);botCar.susp=-getRandomInt(110, 111112);var lucky = true;botCar.rings = getRandomInt(0, 80);botCar.color = getRandom(0, 2);botCar.vinil = [];return botCar;}
-
-
-var rrr = 0,interval_s = 0;
-var PLAY_SLIV = function() {PS=true;var sss = function (){rrr+=1;user.vinilLoadAbort=true;query = {};query.head = 'randomRace';query.carLev = salon[myCar.id].level;socket.send(JSON.stringify(query));infoMsg('<center>'+rrr,rrr);};var interval_s = setInterval( sss , 1000 );}
 var lch = function() {
 var q_id=1,q_name=-13367,q_photo='';
 alert('Предупреждаю, что либо это может не сработать и ты не сможешь писать сообщения до перезагрузки, либо сработает и у тебя может двоиться чат.');
