@@ -84,7 +84,7 @@ if(crcu == myUid*1){acsel = true;jetOn = true;}
 		clearInterval(this.intervalID2);
 		
 		var thh = new Date();
-		var time = (thh - AUT0.now)/60000;
+		var time = (thh - AUTO.now)/60000;
 		
 		if(num == 1){
 		query={};query.head = 'cancelRandomRace';socket.send(JSON.stringify(query));$("#blockBox").css('display','none');
