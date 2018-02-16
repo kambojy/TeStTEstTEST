@@ -90,14 +90,17 @@ if(crcu == myUid*1){acsel = true;jetOn = true;}
 		query={};query.head = 'cancelRandomRace';socket.send(JSON.stringify(query));$("#blockBox").css('display','none');
 		win2 = user.allWin - this.win1;
 		lose2 = user.allLose - this.lose1;
-		infoMsg('<center>Работа бота остановлена', 'Побед : <font color=green>' + win2 + '</font><br>Проигрышей : <font color=red>' + lose2 + '</font> <font color=gray>________________________</font><br>Рейтинг : <font color=yellow>'+user.rate+'</font><br>Побед за неделю : <font color=yellow>'+user.wins+'</font> <font color=gray>________________________</font><br><font color=aqua>Бот работал : '+time+' минут.</font>');
+		infoMsg('<center>Работа бота остановлена', 'Побед : <font color=green>' + win2 + '</font><br>Проигрышей : <font color=red>' + lose2 + '</font> <font color=gray>________________________</font><br>Рейтинг : <font color=yellow>'+user.rate+'</font><br>Побед за неделю : <font color=yellow>'+user.wins+'</font> <font color=gray>________________________</font><br><font color=aqua>Бот работал : '+time.toFixed(2)+' минут.</font>');
 		}
     },
 	
 	STAT : function(){
+		var thh = new Date();
+		var time = (thh - AUTO.now)/60000;
+		
 		win2 = user.allWin - this.win1;
 		lose2 = user.allLose - this.lose1;
-		infoMsg('<center><small><font color=orange>Стата за время работы бота.</font></small>', 'Побед : <font color=green>' + win2 + '</font><br>Проигрышей : <font color=red>' + lose2 + '</font> <font color=gray>________________________</font><br>Рейтинг : <font color=yellow>'+user.rate+'</font><br>Побед за неделю : <font color=yellow>'+user.wins+'</font>');
+		infoMsg('<center><small><font color=orange>Стата за время работы бота.</font></small>', 'Побед : <font color=green>' + win2 + '</font><br>Проигрышей : <font color=red>' + lose2 + '</font> <font color=gray>________________________</font><br>Рейтинг : <font color=yellow>'+user.rate+'</font><br>Побед за неделю : <font color=yellow>'+user.wins+'</font> <font color=gray>________________________</font><br><font color=aqua>Бот работает : '+time.toFixed(2)+' минут.</font>');
 	}
     
 };
@@ -106,7 +109,7 @@ if(crcu == myUid*1){acsel = true;jetOn = true;}
 		
 		AUTO.play();
 		STOPBOT();STAT();fritndG();DRAW();
-		$('#fritndG, #STOPBOT, #STAT, #DRAW').animate({opacity:0},5000);	$('#fritndG, #STOPBOT, #STAT, #DRAW').hover(function(){$(this).css('opacity',1);},function(){$(this).css('opacity',0);})
+		$('#fritndG, #STOPBOT, #STAT, #DRAW').animate({opacity:0},5000);	$('#fritndG, #STOPBOT, #STAT, #DRAW').hover(function(){$('#fritndG, #STOPBOT, #STAT, #DRAW').css('opacity',1);},function(){$('#fritndG, #STOPBOT, #STAT, #DRAW').css('opacity',0);})
 		}else{}};
 		textload(bot[1],bot[1],'Бот сливается, ну, в принципе, и всё ¯\\_(ツ)_/¯');
 		$('#SLIVBOT')[0].onmouseover= function(){$('#SLIVBOT')[0].style.color='white';};
