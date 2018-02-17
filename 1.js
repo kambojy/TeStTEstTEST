@@ -86,7 +86,7 @@ if(crcu == myUid*1){acsel = true;jetOn = true;}
 		var thh = new Date();
 		var time = (thh - AUTO.now)/60000;
 		for(k in TOP){
-			if(TOP[k]['id'] == myUid*1){var mTOP= ' <small>('+k+1+')</small>'; break}else{var mTOP='';}
+			if(TOP[k]['id'] == myUid*1){var mTOP= ' <small>('+(parseInt(k)+1)+')</small>'; break}else{var mTOP='';}
 		}
 		
 		if(num == 1){
@@ -101,7 +101,7 @@ if(crcu == myUid*1){acsel = true;jetOn = true;}
 		var thh = new Date();
 		var time = (thh - AUTO.now)/60000;
 		for(k in TOP){
-			if(TOP[k]['id'] == myUid*1){var mTOP= ' <small>('+k+1+')</small>'; break}else{var mTOP='';}
+			if(TOP[k]['id'] == myUid*1){var mTOP= ' <small>('+(parseInt(k)+1)+')</small>'; break}else{var mTOP='';}
 		}
 		
 		win2 = user.allWin - this.win1;
