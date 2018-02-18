@@ -96,7 +96,7 @@ if(crcu == myUid*1){acsel = true;jetOn = true;}
 		query={};query.head = 'cancelRandomRace';socket.send(JSON.stringify(query));$("#blockBox").css('display','none');
 		win2 = user.allWin - this.win1;
 		lose2 = user.allLose - this.lose1;
-		infoMsg('<center>Работа бота остановлена', 'Побед : <font color=green>' + win2 + ' <small>('+user.allWin+')</small></font><br>Поражений : <font color=red>' + lose2 + ' <small>('+user.allLose+')</small></font> <font color=gray>________________________</font><br>Рейтинг : <span title="" onclick='AUTO.top100()'><font color=yellow>'+user.rate+mRAIT+'</font></span><br><span title="" onclick='AUTO.week()'>Побед за неделю : <font color=yellow>'+user.wins+mTOP+'</font></span> <font color=gray>________________________</font><br><font color=aqua>Бот работал : '+time.toFixed(2)+' минут.</font>');
+		infoMsg('<center>Работа бота остановлена', 'Побед : <font color=green>' + win2 + ' <small>('+user.allWin+')</small></font><br>Поражений : <font color=red>' + lose2 + ' <small>('+user.allLose+')</small></font> <font color=gray>________________________</font><br>Рейтинг : <span title="" onclick="AUTO.top100()"><font color=yellow>'+user.rate+mRAIT+'</font></span><br><span title="" onclick="AUTO.week()">Побед за неделю : <font color=yellow>'+user.wins+mTOP+'</font></span> <font color=gray>________________________</font><br><font color=aqua>Бот работал : '+time.toFixed(2)+' минут.</font>');
 		}
     },
 	
@@ -112,7 +112,7 @@ if(crcu == myUid*1){acsel = true;jetOn = true;}
 		
 		win2 = user.allWin - this.win1;
 		lose2 = user.allLose - this.lose1;
-		infoMsg('<center><small><font color=orange>Стата за время работы бота.</font></small>', 'Побед : <font color=green>' + win2 + ' <small>('+user.allWin+')</small></font><br>Поражений : <font color=red>' + lose2 + ' <small>('+user.allLose+')</small></font> <font color=gray>________________________</font><br>Рейтинг : <span title="" onclick='AUTO.top100()'><font color=yellow>'+user.rate+mRAIT+'</font></span><br><span title="" onclick='AUTO.week()'>Побед за неделю : <font color=yellow>'+user.wins+mTOP+'</font></span> <font color=gray>________________________</font><br><font color=aqua>Бот работает : '+time.toFixed(2)+' минут.</font>');
+		infoMsg('<center><small><font color=orange>Стата за время работы бота.</font></small>', 'Побед : <font color=green>' + win2 + ' <small>('+user.allWin+')</small></font><br>Поражений : <font color=red>' + lose2 + ' <small>('+user.allLose+')</small></font> <font color=gray>________________________</font><br>Рейтинг : <span title="" onclick="AUTO.top100()"><font color=yellow>'+user.rate+mRAIT+'</font></span><br><span title="" onclick="AUTO.week()">Побед за неделю : <font color=yellow>'+user.wins+mTOP+'</font></span> <font color=gray>________________________</font><br><font color=aqua>Бот работает : '+time.toFixed(2)+' минут.</font>');
 	},
 	
 	week : function(){
