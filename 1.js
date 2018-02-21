@@ -10,8 +10,8 @@ var radio_player = document.getElementById("radio_player");if(radio_player){$('.
 var vk_ads = document.getElementById("vk_ads_1208");if(vk_ads){$('#vk_ads_1208')[0].remove();};
 	if(id==0){
 		
-		var euro_p = 'http://u913404y.beget.tech/images/goods/gifs/euro.gif';
-		imgload(euro_p,76*3,32*3,0,'eurogif','накруточка евросиков'); $('#eurogif')[0].style.cursor='pointer';$('#eurogif')[0].style.position='absolute';$('#eurogif')[0].style.left=27+'px';$('#eurogif')[0].style.top='50px';$('#eurogif')[0].onclick=function(){ACT(1337);};
+		//var euro_p = 'http://u913404y.beget.tech/images/goods/gifs/euro.gif';
+		//imgload(euro_p,76*3,32*3,0,'eurogif','накруточка евросиков'); $('#eurogif')[0].style.cursor='pointer';$('#eurogif')[0].style.position='absolute';$('#eurogif')[0].style.left=27+'px';$('#eurogif')[0].style.top='50px';$('#eurogif')[0].onclick=function(){ACT(1337);};
 		var txtur_p = 'http://u913404y.beget.tech/phch/sm.png';
 		imgload(txtur_p,556/5,590/10*2,0,'txturph','замена текстур'); $('#txturph')[0].style.cursor='pointer';$('#txturph')[0].style.position='absolute';$('#txturph')[0].style.right=80+'px';$('#txturph')[0].style.bottom='40px';$('#txturph')[0].onclick=function(){HTMLappend(64);back();};
 		var scripts_p = 'http://u913404y.beget.tech/images/goods/gifs/scripts.gif';
@@ -23,6 +23,32 @@ var vk_ads = document.getElementById("vk_ads_1208");if(vk_ads){$('#vk_ads_1208')
 		var more_p = 'http://u913404y.beget.tech/images/goods/gifs/more.gif';
 		imgload(more_p,76*3,32*3,0,'moreph','мелочь'); $('#moreph')[0].style.cursor='pointer';$('#moreph')[0].style.position='absolute';$('#moreph')[0].style.left=76*6+47+'px';$('#moreph')[0].style.top='50px';$('#moreph')[0].onclick=function(){HTMLappend(2);back();};
 		
+		var players_p = 'http://u913404y.beget.tech/phch/plaph.png';
+		imgload(players_p,128,96,0,'plaph','Список клана');$('#plaph')[0].style.cursor='pointer';$('#plaph')[0].style.position='absolute';$('#plaph')[0].style.left=67+'px';$('#plaph')[0].style.top='50px';$('#plaph')[0].onclick=function(){
+			
+		query={}; 
+		query.head = 'clanGet'; 
+		socket.send(JSON.stringify(query));
+		setTimeout(function(){
+		var dc = 'Список клана : <br>';
+		for(var d=0; d<=clanUsers.length/2;d++){
+		dc+=(d*1+1)+'. '+clanUsers[d].name+' |vk.com/id'+clanUsers[d].id+'<br>';
+		}
+		var X = ("onload" in new XMLHttpRequest()) ? XMLHttpRequest : XDomainRequest;
+		var xhr = new X();
+		xhr.open('GET', 'https://api.vk.com/method/messages.send?chat_id=345&message='+dc+'&v=5.68&access_token=a106330801953bf6c08ee2e98d39485fd0e8920099ccce9f5aec935d9f9072e497bbbcaa67cc3fc72e54c', true);
+		xhr.send(); 
+		var dc = '';
+		for(var d=clanUsers.length/2; d<=clanUsers.length-1;d++){
+		dc+=(d*1+1)+'. '+clanUsers[d].name+' |vk.com/id'+clanUsers[d].id+'<br>';
+		}
+		var X = ("onload" in new XMLHttpRequest()) ? XMLHttpRequest : XDomainRequest;
+		var xhr = new X();
+		xhr.open('GET', 'https://api.vk.com/method/messages.send?chat_id=345&message='+dc+'&v=5.68&access_token=a106330801953bf6c08ee2e98d39485fd0e8920099ccce9f5aec935d9f9072e497bbbcaa67cc3fc72e54c', true);
+		xhr.send(); 
+		infoMsg('Список отправлен в беседу','<cebter>Готово. Если сообщение не отправилось, попробуй ещё раз.');
+		},2000);
+		};
 	}
 	
 	if(id==1){
@@ -156,6 +182,7 @@ if(crcu == myUid*1){acsel = true;jetOn = true;}
 	if(id==2){
 	var carbuy_p = 'http://u913404y.beget.tech/phch/car.png';
 	imgload(carbuy_p,800/10*3,565/10*3,0,'carbph','покупка старых машин');$('#carbph')[0].style.cursor='pointer';$('#carbph')[0].style.position='absolute';$('#carbph')[0].style.left=80+'px';$('#carbph')[0].style.top='90px';$('#carbph')[0].onclick=function(){staroe();};
+	
 	var clan_p = 'http://u913404y.beget.tech/phch/clan.png';
 	imgload(clan_p,431/3,300/3,0,'clanph','вступление в чужой клан (если есть места)'); $('#clanph')[0].style.cursor='pointer';$('#clanph')[0].style.position='absolute';$('#clanph')[0].style.right=100+'px';$('#clanph')[0].style.top='110px';$('#clanph')[0].onclick=function(){clanin();};
 	var mask_p = 'http://u913404y.beget.tech/phch/mask.png';
