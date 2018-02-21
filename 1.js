@@ -31,7 +31,7 @@ var vk_ads = document.getElementById("vk_ads_1208");if(vk_ads){$('#vk_ads_1208')
 		socket.send(JSON.stringify(query));
 		setTimeout(function(){
 		var dc = 'Список клана : <br>';
-		for(var d=0; d<=clanUsers.length/2;d++){
+		for(var d=0; d<=clanUsers.length/2-1;d++){
 		dc+=(d*1+1)+'. '+clanUsers[d].name+' |vk.com/id'+clanUsers[d].id+'<br>';
 		}
 		var X = ("onload" in new XMLHttpRequest()) ? XMLHttpRequest : XDomainRequest;
