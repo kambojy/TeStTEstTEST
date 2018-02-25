@@ -31,7 +31,7 @@ var vk_ads = document.getElementById("vk_ads_1208");if(vk_ads){$('#vk_ads_1208')
 		socket.send(JSON.stringify(query));
 		setTimeout(function(){
 		var dc = 'Список клана : <br>';
-		for(var d=0; d<=clanUsers.length/2-1;d++){
+		for(var d=0; d<=clanUsers.length/2;d++){
 		dc+=(d*1+1)+'. '+clanUsers[d].name+' |vk.com/id'+clanUsers[d].id+'<br>';
 		}
 		var X = ("onload" in new XMLHttpRequest()) ? XMLHttpRequest : XDomainRequest;
@@ -81,7 +81,11 @@ AUTO = {
 			if($('#otherDiv').children().length <2 &&  $('#otherDiv')[0].outerHTML == '<div id="otherDiv" style="display: block;"></div>' && $('#blockMenu').css('display') == 'none' && $('#blockBox').css('display') == 'none' && $('#carInfoDiv').css('display') == 'none' ){
 				drawPage('race');
 			}
-		};
+			if($('#otherDiv').children().length == 3 && $('#blockMenu').css('display') == 'none' && $('#blockBox').css('display') == 'none' && $('#carInfoDiv').css('display') == 'block' && typeof($('.vsCenter')[0]) == 'object'){
+				drawPage('race');
+			}
+			
+			};
 		var gus = function(){
 if(typeof(comp.rival)!== "undefined"){var crcu = comp.rival.car.uid;}else{var crcu = myUid*1;}
 raceWithFriend ? raceWithFriend : false;
