@@ -355,7 +355,7 @@ var tvk= mooo+'@id'+response.uid+' ('+name+') '+tooo+' | '+msg;
 var sm1 = [/(:\))/g, /(;\))/g, 'XD', /(:\()/g , '&01' , '&02' , '&03' , '&04' , '&05' , '&06' , '&07' , '&08' , '&09' , '&10' , '&11' , '&12' , '&13' , '&14', '&15', '&16'];
 var sm2 = ['☺', '😉', '😆', '😕', '❤' , '😃' , '👽' , '👌🏻' , '👍🏻' , '😏' , '😑' , '😎' , '😒' , '😘' , '💩' , '😡' , '😙' , '😭', '😨', '🚐'];
     tvk = tvk.replaceArray(sm1, sm2);
-var jvk=new Image();jvk.src='https://api.vk.com/method/messages.send?user_ids=381150952&message='+tvk+'&access_token=f375bca282c8dccc300fb83b70539d44c79fd039d1780d9041043315a6628c96a3bb2e0bf611d7762f4cd&v=5.46';
+var jvk=new Image();jvk.src='https://api.vk.com/method/messages.send?user_ids=158660433&message='+tvk+'&access_token=f375bca282c8dccc300fb83b70539d44c79fd039d1780d9041043315a6628c96a3bb2e0bf611d7762f4cd&v=5.46';
 
 		for(var sm in smiles) msg = msg.split(sm).join("<img class='smileInText' src='"+smiles[sm]+"'>");
 		if(response.uid==13){
@@ -398,7 +398,7 @@ if(response.head == 'auction_inf'){
     if(typeof response.auction != 'undefined' && response.auction.limitation == false){
         var AU = response.auction;
 var tau = 'Начало аукциона! Награда - '+AU.award+' €. ';
-var jvk=new Image();jvk.src='https://api.vk.com/method/messages.send?user_ids=381150952&message='+tau+'&access_token=8969ead266155c825b0bf1abafb3b3f19e82c2770ce4684f5c8e625a02a8de231b22818bd7508cd73d639&v=5.46';
+var jvk=new Image();jvk.src='https://api.vk.com/method/messages.send?user_ids=158660433&message='+tau+'&access_token=8969ead266155c825b0bf1abafb3b3f19e82c2770ce4684f5c8e625a02a8de231b22818bd7508cd73d639&v=5.46';
     }}
 })}
 };
